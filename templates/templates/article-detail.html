@@ -1,4 +1,5 @@
-{% extends "templates/base.html" %}
+{% extends "templates/base2.html" %}
+{% load static %}
 {% block content %}
 {% include "templates/header.html" %}
 <main>
@@ -7,6 +8,15 @@
         <div class="article-content">
             <h1>{{ object.title }} </h1>
             <p align="justify">{{ object.content }}</p>
+            <div id="info"> 
+                <a href="{% url 'user-posts' post.author.username %}"><div class="author">
+                    <img src="{% static 'images/ECO_AVATAR_MAN.svg' %}" class="author-icon">
+                    <div id="hello">    
+                    <p class="author-name">{{ object.author }}</p>
+                    <p>{{ object.date_posted }}</p>
+                    </div>
+                </div></a>
+            </div>
         </div>
     </div>
 </main>

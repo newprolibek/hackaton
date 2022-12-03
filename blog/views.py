@@ -39,6 +39,7 @@ class UserPostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+    template_name = 'templates/article-detail.html'
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):

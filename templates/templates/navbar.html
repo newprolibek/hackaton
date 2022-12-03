@@ -1,6 +1,6 @@
 {% load static %}
 <div class="navbar">
-    <a href='profile.html'><div class="icon-and-image">
+    <a href="{% url 'user-posts' user.username %}"><div class="icon-and-image">
         <img src="{% static 'images/person_icon.png' %}">
         <p>Моя страница</p>
     </div>
