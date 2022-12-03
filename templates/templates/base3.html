@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Foodeiblog Template">
+  <meta name="keywords" content="Foodeiblog, unica, creative, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Css Styles -->
+  <link rel="stylesheet" href="{% static 'css/article-create.css' %}" type="text/css">
+</head>
+<body>
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>
+<script>
+  var textarea = document.querySelector('textarea');
+
+  textarea.addEventListener('keydown', autosize);
+              
+  function autosize(){
+      var el = this;
+      setTimeout(function(){
+          el.style.cssText = 'height:auto; padding:0';
+          // for box-sizing other than "content-box" use:
+          // el.style.cssText = '-moz-box-sizing:content-box';
+          el.style.cssText = 'height:' + el.scrollHeight + 'px';
+      },0);
+  }
+
+  function save ()  {
+      let f = imageSaver.files[0];
+      if (f) {
+          customImage.src = URL.createObjectURL(f);
+          localStorage.setItem('myImage', image1.src);
+      }
+  }
+  
+  customImage.src = localStorage.getItem('myImage')
+</script>

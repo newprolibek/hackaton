@@ -23,7 +23,7 @@
             <textarea name="text" id="post-publication-text" placeholder="Напишите про то, что вас беспокоит."></textarea>
             </form>
         </div>-->
-        <a href="article-create.html"><div class="create-article">
+        <a href="{% url 'post-create' %}"><div class="create-article">
             <img src="{% static 'images/plus_icon.png' %}">
             <h3>Создать статью</h3>
         </div></a>

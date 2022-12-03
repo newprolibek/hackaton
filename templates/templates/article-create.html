@@ -1,51 +1,26 @@
-{% extends "templates/base.html" %}
+{% extends "templates/base3.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
 <body>
     {% include "templates/header.html"%}
     <main>
         {% include "templates/navbar.html" %}
-        <div class="navbar">
-            <a href='profile.html'><div class="icon-and-image">
-                <img src="static/images/person_icon.png">
-                <p>Моя страница</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="static/images/lenta_icon.png">
-                <p>Лента</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="">
-                <p>События</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="static/images/contract-icon.png">
-                <p>Статьи</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="static/images/gps-icon.png">
-                <p>Карта</p>
-            </div>
-            </a>
-        </div>
         <div class="center-part">
-            <form method="get" class="article-form">
-                <input type="text" id="title" placeholder="Напишите название статьи.">
+            <form method="post" class="article-form">
+                {% csrf_token %}
+                <!--<input type="text" id="title" placeholder="Напишите название статьи.">
                 <textarea name="article-text" id="article-textholder" cols="1" rows="1"
                 placeholder="Напишите что-нибудь"></textarea>
-                <label for="imageSaver" id="upload-photo">Загрузить фон</label>
-                <input type="file" placeholder="Прикрепите картинку" id="imageSaver"></button>
-                <div class="choice">
-                    <button type="submit" id="submission">Опубликовать</button>
-                    <button type="button" onClick="history.back(-2)" id="back">Назад</button>
-                </div>
+                <label for="imageSaver" id="upload-photo">Загрузить фон</label> -->
+                <fieldset>
+                    {{ form|crispy }}
+                </fieldset>
+                    <input type="file" placeholder="Прикрепите картинку" id="imageSaver"></button>
+                    <div class="choice">
+                        <button type="submit" id="submission">Опубликовать</button>
+                        <button type="button" onClick="history.back(-2)" id="back">Назад</button>
+                    </div>
             </form>
         </div>
         <div class="right-side">
@@ -53,29 +28,4 @@
         </div>
     </main>
 </body>
-</html>
-<script>
-    var textarea = document.querySelector('textarea');
-
-    textarea.addEventListener('keydown', autosize);
-                
-    function autosize(){
-        var el = this;
-        setTimeout(function(){
-            el.style.cssText = 'height:auto; padding:0';
-            // for box-sizing other than "content-box" use:
-            // el.style.cssText = '-moz-box-sizing:content-box';
-            el.style.cssText = 'height:' + el.scrollHeight + 'px';
-        },0);
-    }
-
-    function save ()  {
-        let f = imageSaver.files[0];
-        if (f) {
-            customImage.src = URL.createObjectURL(f);
-            localStorage.setItem('myImage', image1.src);
-        }
-    }
-    
-    customImage.src = localStorage.getItem('myImage')
-</script>
+{% endblock content %}
