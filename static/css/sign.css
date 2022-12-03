@@ -1,0 +1,155 @@
+*{  
+    margin:0;
+    padding:0;
+}
+  
+body{
+  background-color:#141518;
+  font-family:helvetica;
+}
+  
+#bg{
+  display: flex;
+  margin-top:100px;
+  height:500px;
+  width:1000px;
+  margin-left:auto;
+  margin-right:auto; 
+  background-color:#008968;
+  border-radius: 10px;
+}
+
+.form{
+  float:left;
+  margin-top: 60px;
+  height:100%;
+  width:55%;
+  box-sizing:border-box;
+  padding:40px;
+  margin-left: 25px;
+}
+
+.textbox{
+  height:50px;
+  width:85%;
+  border-radius:50px;
+  font-size: 16px;
+  border:rgba(255, 255, 255, 0.3) 2px solid;
+  box-sizing:border-box;
+  padding:25px;
+  margin-bottom:30px;
+}
+
+.textbox:focus{
+  outline:none;
+  border:rgb(58, 58, 58) 2px solid;
+  color:rgb(58, 58, 58);
+}
+
+.button, .button-signin{
+  height:65px;
+  width:65%;
+  border-radius:50px;
+  margin-top: 20px;
+  border:rgba(0,0,0,.3) 0px solid;
+  box-sizing:border-box;
+  padding:10px;
+  margin-bottom:30px;
+  margin-left: 10%;
+  background:#1D1F25;
+  color:#FFF;
+  font-weight:bold;
+  font-size: 16px;
+  transition:background .4s;
+  cursor:pointer;
+}
+
+.button:hover, .button-signin:hover {
+  background:#5f5f79;
+}
+
+.button-signin {
+  margin-top: 110px;
+}
+
+.text {
+  margin-top: 90px;
+  color: white;
+  font-size: 26px;
+  height: 50%;
+  width: 35%;
+}
+
+.text p, .text a {
+  font-size: 16px;
+  color: white;
+  margin-top: 135px;
+}
+
+/* profile.html */
+
+#bg1 {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .text {
+    width: 35%;
+    font-size: 22px;
+  }
+  #bg {
+    width: 800px;
+  }
+  .text p, .text a {
+    margin-top: 85px;
+  }
+  .button-signin {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #bg {
+    display: none;
+  }
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+  #bg1 {
+    display: flex;
+    width: 90%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #008968;
+    border-radius: 5px;
+  }
+  .form {
+    width: 100%;
+    padding: 35px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .button, .button-signin {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .textbox {
+    width: 100%;
+  }
+  .signin, .signin a {
+    text-align: center;
+    color: white;
+    padding-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .text h1 {
+    font-size: 26px;
+  }
+}

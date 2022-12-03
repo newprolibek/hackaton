@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: #141518;
+  font-family: helvetica;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width:100%;
+  height: 80px;
+  background-color: #1D1F25;
+  border-bottom: 1px solid #646872;
+}
+
+.inner-header {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit;
+}
+.profile img {
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.logo-container img {
+  width: 150px;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+.navbar {
+  width: 15%;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.icon-and-image img {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-and-image {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  opacity: 50%;
+  gap: 10px;
+  padding: 10px;
+}
+
+.central-part {
+  width: 70%;
+}
+
+.article-content {
+  padding: 50px;
+  padding-right: 75px;
+  opacity: 80%;
+  background-color: #1D1F25;
+  border: 1px solid #646872;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+.article-content h1 {
+  margin-bottom: 50px;
+}
+
+.article-content p {
+  font-size: 18px;
+}

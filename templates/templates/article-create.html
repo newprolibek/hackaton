@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание статьи</title>
+    <link rel="stylesheet" href="static/article-create.css">
+</head>
+<body>
+    <header>
+        <div class="inner-header">
+            <!--<div class="navigation">
+                <ul class="ulli">
+                    <li><img src=""></li>
+                    <li><img src=""></li>
+                    <li><img src=""></li>
+                </ul>
+            </div>-->
+            <div class="logo-container">
+                <img src="">
+            </div>
+            <div class="profile">
+                <a href="profile.html"><img src="static/images/arthur_avatar.png"></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="navbar">
+            <a href='profile.html'><div class="icon-and-image">
+                <img src="static/images/person_icon.png">
+                <p>Моя страница</p>
+            </div>
+            </a>
+            <a href='' class="trigger">
+            <div class="icon-and-image">
+                <img src="static/images/lenta_icon.png">
+                <p>Лента</p>
+            </div>
+            </a>
+            <a href='' class="trigger">
+            <div class="icon-and-image">
+                <img src="">
+                <p>События</p>
+            </div>
+            </a>
+            <a href='' class="trigger">
+            <div class="icon-and-image">
+                <img src="static/images/contract-icon.png">
+                <p>Статьи</p>
+            </div>
+            </a>
+            <a href='' class="trigger">
+            <div class="icon-and-image">
+                <img src="static/images/gps-icon.png">
+                <p>Карта</p>
+            </div>
+            </a>
+        </div>
+        <div class="center-part">
+            <form method="get" class="article-form">
+                <input type="text" id="title" placeholder="Напишите название статьи.">
+                <textarea name="article-text" id="article-textholder" cols="1" rows="1"
+                placeholder="Напишите что-нибудь"></textarea>
+                <label for="imageSaver" id="upload-photo">Загрузить фон</label>
+                <input type="file" placeholder="Прикрепите картинку" id="imageSaver"></button>
+                <div class="choice">
+                    <button type="submit" id="submission">Опубликовать</button>
+                    <button type="button" onClick="history.back(-2)" id="back">Назад</button>
+                </div>
+            </form>
+        </div>
+        <div class="right-side">
+            <p>Напишите о беспокоящих вас проблемах экологии и гендерного равенства, которые по вашему мнению, нуждаются в решении.</p>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+    var textarea = document.querySelector('textarea');
+
+    textarea.addEventListener('keydown', autosize);
+                
+    function autosize(){
+        var el = this;
+        setTimeout(function(){
+            el.style.cssText = 'height:auto; padding:0';
+            // for box-sizing other than "content-box" use:
+            // el.style.cssText = '-moz-box-sizing:content-box';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+        },0);
+    }
+
+    function save ()  {
+        let f = imageSaver.files[0];
+        if (f) {
+            customImage.src = URL.createObjectURL(f);
+            localStorage.setItem('myImage', image1.src);
+        }
+    }
+    
+    customImage.src = localStorage.getItem('myImage')
+</script>

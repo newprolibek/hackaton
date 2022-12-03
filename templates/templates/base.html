@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Foodeiblog Template">
+  <meta name="keywords" content="Foodeiblog, unica, creative, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Css Styles -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/sign.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/article-detail.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/article-create.css' %}" type="text/css">
+</head>
+<header>
+    
+    {% block content %}
+
+    {% endblock content %}
+</header>
+</html>

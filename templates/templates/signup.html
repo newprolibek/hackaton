@@ -1,0 +1,34 @@
+{% extends "templates/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div id="bg">
+    <form class="form" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <!--<input type="text" placeholder="Твой никнейм" class="textbox" required/>
+            <input type="text" placeholder="Твой номер телефона" class="textbox" required/>
+            <input type="password" placeholder="Пароль" class="textbox" required/>
+            <input type="submit" value="Зарегистрироваться" class="button" />-->
+            {{ form|crispy }}
+        </fieldset>
+        <input type="submit" value="Зарегистрироваться" class="button" />
+    </form>
+    <div class="text">
+        <h1>Регистрация <br> на закрытый <br> бета-тест</h1>
+        <p>Уже зарегистрирован? <a href="{% url 'login'%}">Тогда жми сюда!</a></p>
+    </div>
+</div>
+<div id="bg1">
+    <div class="text">
+        <h1>Регистрация <br> на закрытый <br> бета-тест</h1>
+    </div>
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Зарегистрироваться" class="button" />
+    </form>
+    <div class="signin">
+        <p>Уже зарегистрирован? <a href="{% url 'login'%}">Тогда жми сюда!</a></p>
+    </div>
+</div>
+{% endblock content %}
