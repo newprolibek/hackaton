@@ -85,7 +85,13 @@ body{
 /* profile.html */
 
 #bg1 {
-  display: none;
+  display: flex;
+}
+
+input {
+  height:55px;
+  width:65%;
+  border-radius: 19px;
 }
 
 @media screen and (max-width: 1100px) {
