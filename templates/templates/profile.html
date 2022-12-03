@@ -1,5 +1,9 @@
 {% extends "templates/base.html" %}
+
+{% load static %}
+
 {% block content %}
+{% include "templates/header.html" %}
 <main>
     {% include "templates/navbar.html" %}
     <div class="central-part">
@@ -20,55 +24,35 @@
             </form>
         </div>-->
         <a href="article-create.html"><div class="create-article">
-            <img src="static/images/plus_icon.png">
+            <img src="{% static 'images/plus_icon.png' %}">
             <h3>Создать статью</h3>
         </div></a>
         <div class="article-list">
+            {% for post in posts %}
             <div class="article">
                 <img src="" class="article-image">
                 <div class="article-text">
-                    <a href='article-detail.html'><h2  class="article-title">Опять сели.</h2></a>
-                    <p id="text-content">В этой статье я вам расскажу про то, как сель бла бла бла бла....</p>
-                    <a href="profile.html"><div class="author">
+                    <a href={% url 'post-detail' post.id %}><h2  class="article-title">{{ post.title }}</h2></a>
+                    <p id="text-content">{{ post.content|truncatechars:255 }}</p>
+                    <a href="{% url 'user-posts' post.author.username %}"><div class="author">
                         <img src="static/images/arthur_avatar.png" class="author-icon">
-                        <p class="author-name">Дуйшеев Артур</a>
+                        <p class="author-name">{{ post.author }}</a>
                     </div></a>
                 </div>
             </div>
-            <div class="article">
-                <img src="" class="article-image">
-                <div class="article-text">
-                    <a href='article-detail.html'><h2 class="article-title">Опять сели.</h2></a>
-                    <p id="text-content">В этой статье я вам расскажу про то, как сель бла бла бла бла....</p>
-                    <a  href="profile.html"><div class="author">
-                        <img src="static/images/arthur_avatar.png" class="author-icon">
-                        <p class="author-name">Дуйшеев Артур</p>
-                    </div></a>
-                </div>
-            </div>
-            <div class="article">
-                <img src="" class="article-image">
-                <div class="article-text">
-                    <a href='article-detail.html'><h2 class="article-title">Опять сели.</h2></a>
-                    <p id="text-content">В этой статье я вам расскажу про то, как сель бла бла бла бла....</p>
-                    <a href="profile.html"><div class="author">
-                        <img src="static/images/arthur_avatar.png" class="author-icon">
-                        <p class="author-name">Дуйшеев Артур</p>
-                    </div></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <div class="profile-box">
         <img src="static/images/arthur_avatar.png" class="avatar">
         <div class="name-and-status">
-            <h3>Дуйшеев Артур</h3>
-            <p>Новичок (0)</p>
+            <h3>{{ post.author.username }}</h3>
+            <p>Бета-тестер (0)</p>
         </div>
         <button class="change-profile">Изменить профиль</button>
         <div id="description">
             <p>
-                Привет, меня зовут Артур. Я люблю экологию. А ещё я основатель компании FONT.DEV. Мен кыргызча билбейм.
+                За зелёный мир!
             </p>
         </div>
     </div>
@@ -79,4 +63,4 @@
         <h1>Данный раздел в разработке!</h1>
     </div>
 </div>
-{% endblock content%}
+{% endblock content %}
