@@ -1,68 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Опять сели..</title>
-    <link rel="stylesheet" href="static/article-detail.css">
-</head>
-<body>
-    <header>
-        <div class="inner-header">
-            <!--<div class="navigation">
-                <ul class="ulli">
-                    <li><img src=""></li>
-                    <li><img src=""></li>
-                    <li><img src=""></li>
-                </ul>
-            </div>-->
-            <div class="logo-container">
-                <img src="">
-            </div>
-            <div class="profile">
-                <a href="profile.html"><img src="static/images/arthur_avatar.png"></a>
-            </div>
+{% extends "templates/base.html" %}
+{% block content %}
+{% include "templates/header.html" %}
+<main>
+    {% include "templates/navbar.html" %}
+    <div class="central-part">
+        <div class="article-content">
+            <h1>{{ object.title }} </h1>
+            <p align="justify">{{ object.content }}</p>
         </div>
-    </header>
-    <main>
-        <div class="navbar">
-            <a href='profile.html'><div class="icon-and-image">
-                <img src="static/images/person_icon.png">
-                <p>Моя страница</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="static/images/lenta_icon.png">
-                <p>Лента</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="">
-                <p>События</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="static/images/contract-icon.png">
-                <p>Статьи</p>
-            </div>
-            </a>
-            <a href='' class="trigger">
-            <div class="icon-and-image">
-                <img src="static/images/gps-icon.png">
-                <p>Карта</p>
-            </div>
-            </a>
-        </div>
-        <div class="central-part">
-            <div class="article-content">
-                <h1>Опять сели...</h1>
-                <p align="justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sint aliquam earum autem dolores, recusandae expedita modi itaque veritatis necessitatibus obcaecati voluptatem, quae illo fugiat ea quis. Distinctio error consequuntur debitis amet voluptatum. Necessitatibus cum ullam, vel quisquam incidunt tempore accusantium. Nostrum, magnam, facilis quam id laudantium accusamus maiores quia aliquid, fuga rem itaque facere velit assumenda hic delectus culpa dignissimos ad laboriosam aliquam beatae reiciendis iure! Ipsum commodi architecto iusto voluptates et qui unde sit, rem harum sunt nobis ullam ad placeat voluptas nisi blanditiis ducimus rerum, quod corrupti. Pariatur illo voluptatem consectetur animi minus culpa harum quod, sequi voluptate voluptatum error, ducimus consequatur nisi molestias aliquam deleniti, iure ad consequuntur ipsam. <br> Eos maxime odio repellat nostrum aliquam tempora optio necessitatibus cumque et! Mollitia quae amet consectetur eos fugit animi non saepe totam velit fuga unde harum expedita labore officia molestiae, dolorum repellendus? Placeat doloremque optio rerum tempore dolores sequi, deserunt sed cumque laboriosam officia fugiat cum dignissimos hic exercitationem ad deleniti nobis quas animi! Quidem soluta aspernatur sunt qui omnis cumque blanditiis iure enim, repellendus perspiciatis minima dolorum rem tempora? Laboriosam voluptatum tenetur necessitatibus veritatis quam atque cupiditate consectetur est vel nam numquam a eum repellendus earum cum cumque doloremque quisquam maxime libero, aliquam maiores beatae laudantium quae ratione? Obcaecati beatae labore, ipsa eos possimus dolor maxime numquam magnam unde incidunt reiciendis officiis magni laboriosam consequuntur deleniti quis consectetur! Amet, a perferendis laboriosam perspiciatis placeat consequuntur repellat iusto laborum, similique illum repellendus voluptate doloremque blanditiis accusamus! Magni, atque distinctio id autem provident ad nam vitae aut libero mollitia ea, placeat enim modi nemo consequuntur fugit perferendis reiciendis porro blanditiis quae voluptatum corporis impedit eum? Tempora ex exercitationem dolor unde, expedita delectus totam illo dicta magnam ducimus quasi non ab nulla, sed illum necessitatibus doloremque amet! Maiores a nostrum alias velit quos esse neque facilis vel totam blanditiis, odio repellat rerum, tempore labore obcaecati possimus porro quae est soluta aut, aperiam eius illum ea illo? Veniam numquam eaque explicabo expedita sed hic, saepe assumenda, et, minus nihil tempore temporibus! Quibusdam facilis cupiditate doloremque maiores quis. Ipsam molestias atque ut, recusandae delectus ex molestiae quis perferendis? Nostrum ut ipsa, veniam ab error perspiciatis nemo quas esse neque eos dolorem. Saepe eos nobis, hic ab eligendi quas deserunt eum. Est amet vero repudiandae, reprehenderit hic magni quae eos molestiae nemo inventore odio! Assumenda porro consequuntur id debitis ab ullam magni dolor minima officia voluptates voluptatem qui necessitatibus, tempora commodi, deleniti voluptas. Repudiandae, repellendus ullam! Recusandae deserunt non amet ipsa atque voluptatem nisi dolorem nemo qui, quod laboriosam quas? Ipsam consectetur repellendus fuga hic ipsa consequuntur optio accusantium numquam eligendi veritatis fugiat, est laborum, eaque aspernatur voluptatem officiis tenetur molestias suscipit laudantium repudiandae cumque odio magnam molestiae quae! Eligendi quasi esse laboriosam sunt quas illum minus praesentium dolorum commodi obcaecati nisi voluptates assumenda repellat a facilis ipsa mollitia sit, quidem sapiente? Harum quis laudantium dolore ea vero, aspernatur omnis sint cumque facilis perspiciatis eius esse rem. Voluptates eos iste minima aperiam suscipit tempore quod quis sint tenetur! Repellendus, sunt ea corporis quo ipsa provident quia, debitis ipsam minus omnis voluptatibus. Quod repellat eius id distinctio quaerat quis provident cumque nesciunt magnam, numquam, blanditiis soluta, beatae odit inventore vel mollitia quas. Quia deserunt veniam non velit vero praesentium voluptatibus assumenda ducimus sed neque temporibus, iusto saepe quas aspernatur ullam qui tempore blanditiis, nesciunt optio voluptate a similique quaerat? Odio dolorem repudiandae ipsam iusto quod est ex dolorum quas maxime dicta voluptas fugit provident sint, ab praesentium eligendi, pariatur ducimus, in modi ut consequatur consectetur quam?<br> Nobis nihil fugiat, tenetur tempore repellat assumenda natus.</p>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
+    </div>
+</main>
+{% endblock content %}

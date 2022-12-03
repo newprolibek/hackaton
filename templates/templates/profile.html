@@ -33,9 +33,9 @@
                 <img src="" class="article-image">
                 <div class="article-text">
                     <a href={% url 'post-detail' post.id %}><h2  class="article-title">{{ post.title }}</h2></a>
-                    <p id="text-content">{{ post.content|truncatechars:255 }}</p>
+                    <p id="text-content">{{ post.content|truncatechars:90 }}</p>
                     <a href="{% url 'user-posts' post.author.username %}"><div class="author">
-                        <img src="static/images/arthur_avatar.png" class="author-icon">
+                        <img src="{% static 'images/ECO_AVATAR_MAN.svg' %}" class="author-icon">
                         <p class="author-name">{{ post.author }}</a>
                     </div></a>
                 </div>
@@ -44,9 +44,9 @@
         </div>
     </div>
     <div class="profile-box">
-        <img src="static/images/arthur_avatar.png" class="avatar">
+        <img src="{% static 'images/ECO_AVATAR_MAN.svg' %}" class="avatar">
         <div class="name-and-status">
-            <h3>{{ post.author.username }}</h3>
+            <h3>{{ user.username }}</h3>
             <p>Бета-тестер (0)</p>
         </div>
         <button class="change-profile">Изменить профиль</button>
